@@ -1,6 +1,8 @@
 import React from "react";
 import { projectsData } from "../components/projectsData";
 import { FrameWork } from "../components/frameworkbtn";
+import { DemoIcon } from "../img/icons";
+import { GithubIcon } from "../img/icons";
 
 
 
@@ -24,8 +26,8 @@ export const Projects = (projects) => {
               <p className="project-text">{project.description} </p>
 
               <div>
-                <a className="project-links" href={project.demoLink}>Live Demo</a>
-                <a className="project-links" href={project.githubLink}>Github</a>
+                <a className="project-links" href={project.demoLink}><DemoIcon /> Live Demo</a>
+                <a className="project-links" href={project.githubLink}><GithubIcon /> Github</a>
               </div>
             </div>
           </div>

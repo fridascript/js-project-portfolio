@@ -3,7 +3,7 @@ import placeHolderImg from "../img/placeholderimg.png"
 export const projectsData = [
   {
     name: "Project 1",
-    framework: ["HTML", "CSS", "React"],
+    framework: ["HTML", "CSS", "React", "Node"],
     description: "Placeholder description for Project 1",
     demoLink: "#",
     githubLink: "#",
