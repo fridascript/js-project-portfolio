@@ -24,7 +24,7 @@ p {
   font-weight: 400;
 }
 
-/*****header*****/
+/* ****header****
 .header {
   display: flex;
   flex-direction: column;
@@ -36,9 +36,9 @@ p {
 .header-img {
   width: 90%;
   height: auto;
-}
+} */
 
-/*****Tech*****/
+/* ****Tech****
 .tech {
   display: flex;
   flex-direction: column;
@@ -48,12 +48,12 @@ p {
   color: white;
   padding: 64px 16px;
   margin: 0px;
-}
+} */
 
 
 /*****featured projects*****/
 
-/* framwork boxes */
+/* framwork boxes
 .framework-container {
   display: flex;
   justify-content: flex-start;
@@ -70,9 +70,9 @@ p {
   width: 100%;
   height: 28px;
   text-align: center;
-}
+} */
 
-/* featured projects */
+/* featured projects
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -98,11 +98,11 @@ p {
 
 .project-card .project-info {
   margin-top: 1rem;
-}
+} */
 
 /* demo + github links */
-.project-card .project-links {
-  background: black;
+/* .project-card .project-links {
+  /* background: black;
   color: white;
   display: flex;
   align-items: center;
@@ -114,11 +114,9 @@ p {
   padding: 16px;
   text-decoration: none;
   gap: 16px;
-}
-
-
-
-/*****skills*****/
+} */
+*/
+/* ****skills****
 .skills {
   background-color: black;
   color: white;
@@ -154,12 +152,12 @@ p {
   padding: 0;
   margin: 0;
   text-align: left;
-}
+} */
 
 
 
 /* Media Queries- Tablet Version */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* @media (min-width: 768px) and (max-width: 1024px) {
 
   .skills-container {
     flex-direction: row;
@@ -198,8 +196,8 @@ p {
 }
 
 
-/* Media Queries - Desktop Version */
-@media (min-width: 1025px) {
+Media Queries - Desktop Version */
+/* @media (min-width: 1025px) {
 
   .project-card img {
     width: 80%;
@@ -250,3 +248,4 @@ p {
     direction: ltr;
   }
 }
+ */
