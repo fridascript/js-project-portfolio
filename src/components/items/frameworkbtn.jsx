@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// for styling component items
 const FrameworkContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 `;
-
 const FrameworkBox = styled.div`
   border: 1px solid black;
   border-radius: 4px;
@@ -21,6 +21,7 @@ const FrameworkBox = styled.div`
   justify-content: center;
   text-align: center;
 `;
+
 
 export const FrameWork = ({ frameworks }) => {
   if (!frameworks) return null;
