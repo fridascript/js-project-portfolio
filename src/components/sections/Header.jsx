@@ -26,11 +26,10 @@ export const Header = () => {
       <h1>Frida Engman</h1>
       <HeaderImage src={headerImg} alt="header-image" />
       <h2>
-        Creative Frontend Developer with a background in <br />
-        Behavior Science.
+        Creative Frontend Developer
       </h2>
       <p>
-        Creative front-end developer with a passion for design, code, and human-centered <br />
+        Creative front-end developer with a passion for design, code, and human-centered
         digital experiences.
       </p>
     </WrapperHeader>

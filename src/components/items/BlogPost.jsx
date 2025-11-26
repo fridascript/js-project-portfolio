@@ -15,13 +15,19 @@ const WrapperBlog = styled.div`
 
   @media(min-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
-     padding: 5rem;
+     padding: 3rem;
 
   }
 `;
 const Image = styled.img`
   width: 100%;
   border-radius: 12px;
+
+  @media(min-width: ${theme.breakpoints.tablet}){
+    width: 80%;
+  }
+
+
 `;
 const Post = styled.div`
   display: flex;
