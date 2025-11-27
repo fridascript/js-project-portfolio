@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { projectsData } from "../projectsData";
 import { ProjectCard } from "../items/ProjectCard";
@@ -39,17 +39,31 @@ const Icon = styled.div`
 
 
 export const Projects = () => {
+  const [visibleProjects, setVisibleProjects] = useState(2);
+  const [showAll, setShowAll] = useState(false);
+
+  const handleSeeMore = () => {
+    if (visibleProjects >= projectsData.length) {
+      setShowAll(true);
+    } else {
+      setVisibleProjects(projectsData.length);
+    }
+  };
+
   return (
     <Section>
       <h1>Featured Projects</h1>
 
-      {projectsData.map((project, i) => (
+      {projectsData.slice(0, visibleProjects).map((project, i) => (
         <ProjectCard key={i} project={project} />
       ))}
-      <MoreProjects>
-        <Icon><ArrowIcon /></Icon>See more projects
-      </MoreProjects>
+      {showAll ? (
+        <p>You've reached the end!</p>
+      ) : (
+        <MoreProjects onClick={handleSeeMore}>
+          <Icon><ArrowIcon /></Icon>See more projects
+        </MoreProjects>
+      )}
     </Section>
-
   );
 };

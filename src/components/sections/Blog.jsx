@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { blogData } from "../BlogData";
-import { BlogPost } from "../items/BlogPost";
+import { BlogPost } from "../items/BlogCard";
 import { ArrowIcon } from "../../img/icons";
 
 // for styling component 
@@ -12,7 +12,7 @@ const Section = styled.section`
   text-align: center;
 `;
 
-const MoreArticles = styled.button`
+const MoreArticles = styled.button.attrs({ type: 'button' })`
 background-color: white;
   border: 1px solid black;
   border-radius: 4px;
@@ -40,17 +40,26 @@ const Icon = styled.div`
 `;
 
 export const Blog = () => {
+  const [visibleCount, setVisibleCount] = useState(1);
+
+  const showMore = () => {
+    setVisibleCount(blogData.length);
+  };
+
   return (
     <Section>
       <h1>My Words</h1>
 
-      {blogData.map((post, i) => (
+      {blogData.slice(0, visibleCount).map((post, i) => (
         <BlogPost key={i} blog={post} />
       ))}
-      <MoreArticles>
-        <Icon><ArrowIcon /></Icon>See more articles
-      </MoreArticles>
+      {visibleCount < blogData.length && (
+        <MoreArticles onClick={showMore}>
+          <Icon><ArrowIcon /></Icon>See more articles
+        </MoreArticles>
+      )}
     </Section >
+
 
   );
 };

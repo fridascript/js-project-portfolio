@@ -2,25 +2,22 @@ import placeHolderImg from "../img/placeholderimg.png"
 
 export const blogData = [
   {
-    name: "Blog post 1",
+    name: "Blog post",
     framework: ["July 14th"],
-    description: "Placeholder description for Blog post 1",
-    demoLink: "#",
+    description: "/blogposts/post-1.md",
     image: placeHolderImg,
   },
 
   {
-    name: "Blog post 2",
-    framework: ["July 14th"],
-    description: "Placeholder description for Blog post 1",
-    demoLink: "#",
+    name: "Blog post",
+    framework: ["July 8th"],
+    description: "/blogposts/post-2.md",
     image: placeHolderImg,
   },
   {
-    name: "Blog post 3",
-    framework: ["July 14th"],
-    description: "Placeholder description for Blog post 1",
-    demoLink: "#",
+    name: "Blog post",
+    framework: ["July 1st"],
+    description: "/blogposts/post-3.md",
     image: placeHolderImg,
   },
 ];
