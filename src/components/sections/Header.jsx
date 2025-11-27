@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import headerImg from "../../img/headerimg.png";
 
 // for styling component 
@@ -22,16 +23,16 @@ const HeaderImage = styled.img`
 export const Header = () => {
   return (
     <WrapperHeader>
-      <p>Hi there I am</p>
-      <h1>Frida Engman</h1>
-      <HeaderImage src={headerImg} alt="header-image" />
-      <h2>
+      <Text>Hi there I am</Text>
+      <SectionTitle>Frida Engman</SectionTitle>
+      <HeaderImage src={headerImg} alt="Portrait of Frida Engman" />
+      <SubTitle>
         Creative Frontend Developer
-      </h2>
-      <p>
+      </SubTitle>
+      <Text>
         Creative front-end developer with a passion for design, code, and human-centered
         digital experiences.
-      </p>
+      </Text>
     </WrapperHeader>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import contactImg from "../../img/contactimg.png";
 
 // for styling component 
@@ -28,17 +29,17 @@ const Image = styled.img`
 export const Contacts = () => {
   return (
     <Section>
-      <h1>Let's Talk</h1>
-      <Image src={contactImg} alt="contact-image" />
-      <h2>Frida Engman</h2>
-      <p>
+      <SectionTitle dark>Let's Talk</SectionTitle>
+      <Image src={contactImg} alt="Portrait of Frida Engman" />
+      <SubTitle dark>Frida Engman</SubTitle>
+      <Text dark>
         <ContactLink href="tel:+46 72 290 89 75">+46 (0) 72 290 89 75</ContactLink>
-      </p>
-      <p>
+      </Text>
+      <Text dark>
         <ContactLink href="mailto:frida.r.engman@gmail.com">
           frida.r.engman@gmail.com
         </ContactLink>
-      </p>
+      </Text>
     </Section>
   );
 };

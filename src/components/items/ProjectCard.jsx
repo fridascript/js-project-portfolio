@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import { theme } from "../../theme";
 import { FrameWork } from "./frameworkbtn";
 import { LinkButton } from "../items/Buttons";
-
 import { DemoIcon, GithubIcon } from "../../img/icons";
 
 // for styling component items
@@ -37,22 +37,23 @@ const Card = styled.div`
     }
   }
 `;
-const Image = styled.img`
+
+//project image
+const ProjectImage = styled.img`
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
 
   @media (min-width: ${theme.breakpoints.desktop}) {
     width: 80%;
   }
 `;
-const Info = styled.div``;
-const Title = styled.h2``;
-const Text = styled.p``;
 
+//project content
+const ProjectInfo = styled.div``;
 
-const Icon = styled.div`
+//button icon 
+const ButtonIcon = styled.div`
   display: flex;
   align-items: center;
   margin-left: 6px;
@@ -66,19 +67,19 @@ const Icon = styled.div`
 
 export const ProjectCard = ({ project }) => (
   <Card>
-    <Image src={project.image} alt={project.name} />
-    <Info>
+    <ProjectImage src={project.image} alt={`picture of project ${name}`} />
+    <ProjectInfo>
       <FrameWork frameworks={project.framework} />
-      <Title>{project.name}</Title>
+      <SubTitle>{project.name}</SubTitle>
       <Text>{project.description}</Text>
       <div>
         <LinkButton href={project.demoLink}>
-          <Icon><DemoIcon /></Icon> Live Demo
+          <ButtonIcon><DemoIcon aria-hidden="true" /></ButtonIcon> Live Demo
         </LinkButton>
         <LinkButton href={project.githubLink}>
-          <Icon><GithubIcon /></Icon> Github
+          <ButtonIcon><GithubIcon aria-hidden="true" /></ButtonIcon> Github
         </LinkButton>
       </div>
-    </Info>
+    </ProjectInfo>
   </Card>
 );

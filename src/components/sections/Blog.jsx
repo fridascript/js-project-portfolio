@@ -1,37 +1,22 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import { blogData } from "../BlogData";
 import { BlogPost } from "../items/BlogCard";
 import { ArrowIcon } from "../../img/icons";
+import { ToggleButton } from "../items/Buttons";
 
-// for styling component 
-const Section = styled.section`
+const BlogSection = styled.section`
   background: ${({ theme }) => theme.surface.light.background};
   color: ${({ theme }) => theme.surface.light.text};
   padding: ${({ theme }) => theme.spacing.sectionY} 16px;
   text-align: center;
 `;
 
-const MoreArticles = styled.button.attrs({ type: 'button' })`
-background-color: white;
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 16px;
-  max-width: 200px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  margin-top: 30px;
-  margin: 30px auto 0;
-`;
-
-const Icon = styled.div`
+const TogglebtnIcon = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 15px;  
+  margin-right: 6px;
 
   svg {
     width: 20px;
@@ -40,26 +25,21 @@ const Icon = styled.div`
 `;
 
 export const Blog = () => {
-  const [visibleCount, setVisibleCount] = useState(1);
-
-  const showMore = () => {
-    setVisibleCount(blogData.length);
-  };
+  const [showAll, setShowAll] = useState(false);
+  const visibleCount = showAll ? blogData.length : 1;
 
   return (
-    <Section>
-      <h1>My Words</h1>
+    <BlogSection>
+      <SectionTitle>My Words</SectionTitle>
 
       {blogData.slice(0, visibleCount).map((post, i) => (
         <BlogPost key={i} blog={post} />
       ))}
-      {visibleCount < blogData.length && (
-        <MoreArticles onClick={showMore}>
-          <Icon><ArrowIcon /></Icon>See more articles
-        </MoreArticles>
-      )}
-    </Section >
 
-
+      <ToggleButton $active={showAll} onClick={() => setShowAll(!showAll)}>
+        {!showAll && <TogglebtnIcon><ArrowIcon aria-hidden="true" /></TogglebtnIcon>}
+        {showAll ? "Show fewer" : "See more articles"}
+      </ToggleButton>
+    </BlogSection>
   );
 };

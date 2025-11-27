@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import { TechItem } from "../items/techItem";
 
 
@@ -39,7 +40,7 @@ export const Tech = () => {
 
   return (
     <Section>
-      <h1>Tech</h1>
+      <SectionTitle dark>Tech</SectionTitle>
       <List>
         {techs.map((t, i) => (
           <TechItem key={i}>{t}</TechItem>

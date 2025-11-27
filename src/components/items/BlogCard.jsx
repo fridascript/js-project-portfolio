@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import { theme } from "../../theme";
 import { FrameWork } from "./frameworkbtn";
 import { DemoIcon } from "../../img/icons";
 import { ActionButton } from "../items/Buttons";
-
 import ReactMarkdown from "react-markdown";
 
 // for styling component items
-const WrapperBlog = styled.div`
+const WrapperBlog = styled.article`
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
@@ -23,7 +23,7 @@ const WrapperBlog = styled.div`
 
   }
 `;
-const Image = styled.img`
+const BlogImage = styled.img`
   width: 100%;
   border-radius: 12px;
   @media(min-width: ${theme.breakpoints.tablet}){
@@ -32,14 +32,12 @@ const Image = styled.img`
 
 
 `;
-const Post = styled.div`
+const BlogInfo = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Title = styled.h2``;
-const Text = styled.p``;
 
-const Icon = styled.div`
+const ButtonIcon = styled.span`
   display: flex;
   align-items: center;
   margin-left: 6px;
@@ -67,10 +65,10 @@ export const BlogPost = ({ blog }) => {
 
   return (
     <WrapperBlog>
-      <Image src={blog.image} alt={blog.name} />
-      <Post>
+      <BlogImage src={blog.image} alt={`picture of blog post ${name}`} />
+      <BlogInfo>
         <FrameWork frameworks={blog.framework} />
-        <Title>{blog.name}</Title>
+        <SubTitle>{blog.name}</SubTitle>
 
 
         {isOpen && ( //get blog post from public/blogposts path
@@ -80,10 +78,9 @@ export const BlogPost = ({ blog }) => {
         )}
 
         <ActionButton onClick={toggleOpen}>
-          <Icon><DemoIcon /></Icon> {isOpen ? "Hide Article" : "Read Article"}
+          <ButtonIcon><DemoIcon /></ButtonIcon> {isOpen ? "Hide Article" : "Read Article"}
         </ActionButton>
-
-      </Post>
+      </BlogInfo>
     </WrapperBlog>
   );
 };

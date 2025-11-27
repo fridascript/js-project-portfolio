@@ -18,6 +18,22 @@ export const theme = {
     tablet: "768px",
     desktop: "1025px",
   },
+
+  typography: {
+    h1: {
+      fontSize: "60px",
+      fontWeight: "bold",
+      textAlign: "center",
+    },
+    h2: {
+      fontSize: "30px",
+      fontWeight: "500",
+    },
+    p: {
+      fontSize: "16px",
+      fontWeight: "400",
+    },
+  },
 };
 
 

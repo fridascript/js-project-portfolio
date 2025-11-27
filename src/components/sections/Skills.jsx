@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle, SubTitle, Text } from "../UI/SectionTitle";
 import { theme } from "../../theme";
 import { SkillItem } from "../items/skillItem";
 
@@ -63,7 +64,7 @@ const SkillList = styled.ul`
 export const Skills = () => {
   return (
     <Section>
-      <h1>Skills</h1>
+      <SectionTitle dark>Skills</SectionTitle>
 
       <SkillsContainer>
         <SkillColumn>
